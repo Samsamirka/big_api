@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'main_window.ui'
+# Form implementation generated from reading ui file 'UI/main_window.ui'
 #
-# Created by: PyQt5 UI code generator 5.13.0
+# Created by: PyQt5 UI code generator 5.14.1
 #
 # WARNING! All changes made in this file will be lost!
 
 
-from PyQt5 import QtCore, QtGui, QtWidgets
-from modules.ScalingImage import ScalingImage
+from PyQt5 import QtCore, QtWidgets
+from modules.MapImage import MapImage
 
 
 class Ui_MapAppMainWindow(object):
@@ -46,10 +46,12 @@ class Ui_MapAppMainWindow(object):
         self.object_input.setSizePolicy(sizePolicy)
         self.object_input.setMinimumSize(QtCore.QSize(0, 0))
         self.object_input.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.object_input.setFocusPolicy(QtCore.Qt.ClickFocus)
         self.object_input.setText("")
         self.object_input.setObjectName("object_input")
         self.horizontalLayout.addWidget(self.object_input)
         self.find_obj_btn = QtWidgets.QPushButton(self.centralwidget)
+        self.find_obj_btn.setFocusPolicy(QtCore.Qt.NoFocus)
         self.find_obj_btn.setObjectName("find_obj_btn")
         self.horizontalLayout.addWidget(self.find_obj_btn)
         self.info_label = QtWidgets.QLabel(self.centralwidget)
@@ -57,12 +59,13 @@ class Ui_MapAppMainWindow(object):
         self.info_label.setObjectName("info_label")
         self.horizontalLayout.addWidget(self.info_label)
         self.reset_result_btn = QtWidgets.QPushButton(self.centralwidget)
+        self.reset_result_btn.setFocusPolicy(QtCore.Qt.NoFocus)
         self.reset_result_btn.setObjectName("reset_result_btn")
         self.horizontalLayout.addWidget(self.reset_result_btn)
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
         self.gridLayout.addLayout(self.horizontalLayout, 0, 0, 1, 1)
-        self.map_label = ScalingImage(self.centralwidget)
+        self.map_label = MapImage(self.centralwidget)
         self.map_label.setObjectName("map_label")
         self.gridLayout.addWidget(self.map_label, 1, 0, 1, 1)
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
@@ -83,6 +86,7 @@ class Ui_MapAppMainWindow(object):
         self.address_label.setText("")
         self.address_label.setScaledContents(False)
         self.address_label.setAlignment(QtCore.Qt.AlignCenter)
+        self.address_label.setWordWrap(False)
         self.address_label.setObjectName("address_label")
         self.horizontalLayout_2.addWidget(self.address_label)
         spacerItem1 = QtWidgets.QSpacerItem(50, 10, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
